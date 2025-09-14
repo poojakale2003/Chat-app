@@ -17,7 +17,7 @@ class SocketService {
     console.log('Connecting to socket server with token:', token ? 'Token present' : 'No token');
 
     this.socket = io(process.env.NODE_ENV === 'production' 
-      ? window.location.origin 
+      ? 'https://your-railway-backend-url.railway.app' 
       : 'http://localhost:5000', {
       auth: {
         token: token
