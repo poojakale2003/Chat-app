@@ -155,7 +155,7 @@ router.put('/profile', auth, upload.single('profilePic'), [
     if (fullName) updateData.fullName = fullName;
     if (bio) updateData.bio = bio;
     if (req.file) updateData.profilePic = process.env.NODE_ENV === 'production' 
-      ? `https://your-app-name.vercel.app/uploads/${req.file.filename}`
+      ? `https://chat-app-s-nine.vercel.app/uploads/${req.file.filename}`
       : `http://localhost:5000/uploads/${req.file.filename}`;
 
     const user = await User.findByIdAndUpdate(

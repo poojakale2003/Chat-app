@@ -13,7 +13,7 @@ const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
     origin: process.env.NODE_ENV === 'production' 
-      ? ["https://your-app-name.vercel.app", "https://your-app-name-git-main.vercel.app"]
+      ? ["https://chat-app-s-nine.vercel.app"]
       : ["http://localhost:5173", "http://localhost:3000"],
     methods: ["GET", "POST"]
   }
@@ -22,7 +22,7 @@ const io = socketIo(server, {
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ["https://your-app-name.vercel.app", "https://your-app-name-git-main.vercel.app"]
+    ? ["https://chat-app-s-nine.vercel.app"]
     : ["http://localhost:5173", "http://localhost:3000"],
   credentials: true
 }));
@@ -135,12 +135,12 @@ io.on('connection', (socket) => {
       // Ensure image and file URLs are full URLs
       if (newMessage.image && !newMessage.image.startsWith('http')) {
         newMessage.image = process.env.NODE_ENV === 'production' 
-          ? `https://your-app-name.vercel.app${newMessage.image}`
+          ? `https://chat-app-s-nine.vercel.app${newMessage.image}`
           : `http://localhost:5000${newMessage.image}`;
       }
       if (newMessage.file && !newMessage.file.startsWith('http')) {
         newMessage.file = process.env.NODE_ENV === 'production' 
-          ? `https://your-app-name.vercel.app${newMessage.file}`
+          ? `https://chat-app-s-nine.vercel.app${newMessage.file}`
           : `http://localhost:5000${newMessage.file}`;
       }
       

@@ -7,4 +7,15 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
+  base: './',
 })

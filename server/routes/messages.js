@@ -79,7 +79,7 @@ router.post('/send', auth, upload.single('file'), async (req, res) => {
     if (req.file) {
       console.log('📁 File uploaded:', req.file);
       const fileUrl = process.env.NODE_ENV === 'production' 
-        ? `https://your-app-name.vercel.app/uploads/${req.file.filename}`
+        ? `https://chat-app-s-nine.vercel.app/uploads/${req.file.filename}`
         : `http://localhost:5000/uploads/${req.file.filename}`;
       
       // Check if it's an image
@@ -106,12 +106,12 @@ router.post('/send', auth, upload.single('file'), async (req, res) => {
     // Ensure URLs are full URLs
     if (message.image && !message.image.startsWith('http')) {
       message.image = process.env.NODE_ENV === 'production' 
-        ? `https://your-app-name.vercel.app${message.image}`
+        ? `https://chat-app-s-nine.vercel.app${message.image}`
         : `http://localhost:5000${message.image}`;
     }
     if (message.file && !message.file.startsWith('http')) {
       message.file = process.env.NODE_ENV === 'production' 
-        ? `https://your-app-name.vercel.app${message.file}`
+        ? `https://chat-app-s-nine.vercel.app${message.file}`
         : `http://localhost:5000${message.file}`;
     }
 

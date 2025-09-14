@@ -77,12 +77,12 @@ messageSchema.statics.getConversation = async function(userId1, userId2, page = 
   return messages.map(msg => {
     if (msg.image && !msg.image.startsWith('http')) {
       msg.image = process.env.NODE_ENV === 'production' 
-        ? `https://your-app-name.vercel.app${msg.image}`
+        ? `https://chat-app-s-nine.vercel.app${msg.image}`
         : `http://localhost:5000${msg.image}`;
     }
     if (msg.file && !msg.file.startsWith('http')) {
       msg.file = process.env.NODE_ENV === 'production' 
-        ? `https://your-app-name.vercel.app${msg.file}`
+        ? `https://chat-app-s-nine.vercel.app${msg.file}`
         : `http://localhost:5000${msg.file}`;
     }
     return msg;
