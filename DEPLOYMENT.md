@@ -23,7 +23,7 @@
 ## Step 3: Set Environment Variables
 In Vercel dashboard, go to Settings > Environment Variables and add:
 - `MONGODB_URI`: `mongodb+srv://poojagkale1987_db_user:xqMKMTLMmLfMQeGW@cluster0.3o2htly.mongodb.net/`
-- `JWT_SECRET`: A strong secret key (generate with: `openssl rand -base64 32`)
+- `JWT_SECRET`: `498d4951e83da64eb0edeb27ca78aaf2`
 - `JWT_EXPIRES_IN`: `7d`
 - `NODE_ENV`: `production`
 
